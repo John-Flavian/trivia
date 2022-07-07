@@ -137,19 +137,7 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'unprocessable')
 
-    # # Test the 422 error if question creation fails
-    # def test_422_error_for_question_creation_failure(self):
-    #     previous_questions = Question.query.all()
-    #     res = self.client().post('/questions', json={})
-    #     data = json.loads(res.data)
-    #     later_questions = Question.query.all()
-
-
-    #     self.assertEqual(res.status_code, 422)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'unprocessable')
-    #     self.assertEqual(len(later_questions) == len(previous_questions))
-
+    
     # Test if getting questions by category fails
     def test_422_error_for_getting_questions_by_category_failure(self):
         res = self.client().get('/categories/1000/questions')
@@ -159,15 +147,7 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'resource not found')
 
-    # Test if quiz game error is handled
-    # def test_422_error_for_quiz_game_failure(self):
-    #     res = self.client().post('/quizzes', json={})
-    #     data = json.loads(res.data)
-
-    #     self.assertEqual(res.status_code, 422)
-    #     self.assertEqual(data['success'], False)
-    #     self.assertEqual(data['message'], 'unprocessable')
-
+   
     
 
 
